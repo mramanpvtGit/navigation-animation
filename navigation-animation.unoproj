@@ -1,0 +1,16 @@
+{
+  "Packages": [
+    "Fuse",
+    "FuseJS"
+  ],
+  "Mobile": {
+  	"Orientations": "Portrait"
+  },
+  "Includes": [
+    "Card.ux:UXFile",
+    "MainView.ux:UXFile",
+    "ProfileView.ux:UXFile",
+    "Assets/*.png:Bundle",
+    "js/*.js:Bundle"
+  ]
+}

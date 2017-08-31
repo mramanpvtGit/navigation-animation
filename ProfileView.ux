@@ -1,0 +1,12 @@
+<Page ux:Class="ProfileView">
+  <Router ux:Dependency="router" />
+  <JavaScript File="js/ProfileView.js" />
+<ScrollView>
+<StackPanel> 
+<Button Text="Back" Clicked="{goBack}"> </Button>
+  <Text> Resource: </Text>
+  <Image File="{resource}" />
+
+</StackPanel>
+</ScrollView>
+</Page>

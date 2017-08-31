@@ -1,0 +1,34 @@
+<App Background="#eeeeeeff">
+	<DockPanel>
+		<Router ux:Name="router" />
+		<Navigator>
+			<ProfileView ux:Template="profile" router="router" />
+		</Navigator>
+	<JavaScript File="js/cardData.js" />
+
+
+		<StatusBarBackground DockPanel.Dock="Top" />
+
+		<Panel Margin="0,100">
+			<LinearNavigation>
+				<NavigationMotion GotoDuration="0.4" GotoEasing="CircularOut" />
+			</LinearNavigation>
+			<SwipeNavigate SwipeDirection="Left" />
+			<Each Items="{profiles}">
+				<Card Name="{resource}" CachingMode="Never" Clicked="{getProfile}">		
+					<Image File="{resource}"/>
+<!--					<Clicked>
+						<NavigateTo Target="{resource}"/>
+					</Clicked> -->
+				</Card>
+			</Each>
+			<Each Items="{newProfiles}">
+				<Card Name="{resource}" CachingMode="Never">
+				</Card>
+			</Each>
+
+		</Panel>
+
+		<BottomBarBackground DockPanel.Dock="Bottom" />
+	</DockPanel>
+</App>
