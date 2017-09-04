@@ -31,10 +31,9 @@ function getProfile(arg){
   var profile = arg.data;
   var asyncCall = API.getProfile(profile.id).then(function(newProfile){
   selectedProfile.value = newProfile;
-  });
-
   console.log("result value : " + selectedProfile.value);
   router.push("profile", selectedProfile.value);
+  });
 }
 
   module.exports = {
