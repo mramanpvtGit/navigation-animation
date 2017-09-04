@@ -1,28 +1,19 @@
-var ROOT_URL = "https://localhost:8080/v2/";
+var ROOT_URL = "http://localhost:8080";
 function apiFetch(path, options) {
 	var url = encodeURI(ROOT_URL + path);
-
+	console.log("url = " + url);
 	if(options === undefined) {
 		options = {};
 	}
-
-	// If a body is provided, serialize it as JSON and set the Content-Type header
-	if(options.body !== undefined) {
-		options = Object.assign({}, options, {
-			body: JSON.stringify(options.body),
-			headers: Object.assign({}, options.headers, {
-				"Content-Type": "application/json"
-			})
-		});
-	}
-
-	// Fetch the resource and parse the response as JSON
 	return fetch(url, options)
 		.then(function(response) { return response.json(); });
 }
 
 function getProfiles(){
-  return apiFetch("/find-all");
+	console.log("Calling get profiles");
+	var profiles = apiFetch("/find-all");
+	console.log(profiles);
+  return profiles;
 }
 
 function getProfile(id){

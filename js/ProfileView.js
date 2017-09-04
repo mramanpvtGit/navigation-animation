@@ -1,6 +1,7 @@
 var profile = this.Parameter;
 
-var resource = profile.map(function(x){return x.resource});
+var resource = profile.map(function(x){return x.name});
+
 
 function goBack(){
   router.goBack();

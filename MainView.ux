@@ -14,16 +14,19 @@
 				<NavigationMotion GotoDuration="0.4" GotoEasing="CircularOut" />
 			</LinearNavigation>
 			<SwipeNavigate SwipeDirection="Left" />
-			<Each Items="{profiles}">
-				<Card Name="{resource}" CachingMode="Never" Clicked="{getProfile}">		
+	<!--		<Each Items="{profiles}">
+				<Card Name="{resource}" CachingMode="Never" Clicked="{getProfile}">
 					<Image File="{resource}"/>
-<!--					<Clicked>
+					<Clicked>
 						<NavigateTo Target="{resource}"/>
-					</Clicked> -->
+					</Clicked>
 				</Card>
-			</Each>
+			</Each> -->
 			<Each Items="{newProfiles}">
-				<Card Name="{resource}" CachingMode="Never">
+				<Card Name="{name}" CachingMode="Never" Clicked="{getProfile}">
+				<Image File="{name}" />
+				 <Text Color="Black"> {age}</Text>
+				<Text Color="Black"> {address}</Text> 
 				</Card>
 			</Each>
 

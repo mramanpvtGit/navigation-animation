@@ -25,14 +25,21 @@ var newProfiles = Observable();
 API.getProfiles().then(function(newProfileList){
   newProfiles.replaceAll(newProfileList);
 });
+var selectedProfile = Observable();
 
 function getProfile(arg){
   var profile = arg.data;
-  router.push("profile", profile);
+  var asyncCall = API.getProfile(profile.id).then(function(newProfile){
+  selectedProfile.value = newProfile;
+  });
+
+  console.log("result value : " + selectedProfile.value);
+  router.push("profile", selectedProfile.value);
 }
 
   module.exports = {
     profiles : profiles,
     newProfiles: newProfiles,
-    getProfile : getProfile
+    getProfile : getProfile,
+    selectedProfile : selectedProfile
   }
